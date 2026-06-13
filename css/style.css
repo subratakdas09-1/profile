@@ -67,7 +67,7 @@
 [data-theme="light"] #hero { background: linear-gradient(160deg, #dbeafe 0%, #eff6ff 50%, #ecfdf5 100%); }
 [data-theme="light"] #particleCanvas { opacity: 0.55; }
 [data-theme="light"] .hero-name { color: #0f172a; }
-[data-theme="light"] .name-dr   { color: var(--primary); }
+[data-theme="light"] .name-phd   { color: var(--primary); }
 [data-theme="light"] .hero-bio  { color: #334155; }
 [data-theme="light"] .hero-inst { color: var(--primary); }
 [data-theme="light"] .stat-box  { background: rgba(2,132,199,0.05); }
@@ -303,6 +303,14 @@ strong { color: #fff; font-weight: 600; }
   color: var(--primary);
   letter-spacing: 0.05em;
 }
+.logo-accent {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
 .logo-dot {
   width: 7px; height: 7px;
   background: var(--secondary);
@@ -432,7 +440,7 @@ strong { color: #fff; font-weight: 600; }
   margin-bottom: 16px;
   animation: fadeSlideUp 1s 0.2s both;
 }
-.name-dr {
+.name-phd {
   color: var(--primary);
   font-style: italic;
 }
@@ -1228,6 +1236,8 @@ strong { color: #fff; font-weight: 600; }
   border: 1px solid rgba(16,212,140,0.2);
 }
 .pub-pmid i { margin-right: 4px; }
+a.pub-pmid { transition: var(--transition); }
+a.pub-pmid:hover { background: var(--secondary); color: var(--bg); }
 .pub-doi-btn {
   font-size: 0.78rem;
   font-weight: 600;
@@ -1239,6 +1249,54 @@ strong { color: #fff; font-weight: 600; }
 }
 .pub-doi-btn:hover { background: var(--primary); color: var(--bg); }
 .pub-doi-btn i { font-size: 0.6rem; margin-left: 4px; }
+/* ---------- Gene Accession ---------- */
+.gene-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+.gene-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px 24px;
+  transition: var(--transition);
+}
+.gene-item:hover {
+  border-color: var(--secondary);
+  box-shadow: 0 0 18px rgba(16,212,140,0.08);
+}
+.gene-acc-badge {
+  flex-shrink: 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--secondary);
+  background: var(--secondary-dim);
+  border: 1px solid rgba(16,212,140,0.25);
+  border-radius: 8px;
+  padding: 6px 12px;
+  letter-spacing: 0.06em;
+  margin-top: 2px;
+}
+.gene-body { flex: 1; }
+.gene-title {
+  font-size: 0.97rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+.gene-authors {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
 
 /* ---------- Patents ---------- */
 .patents-grid {
